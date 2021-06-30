@@ -1,5 +1,8 @@
 package ds.algo.binary.search
 
+/**
+ * Created by Sandeep Belgavi on 6/30/2021
+ */
 object BS_FindElementInRotatedSortedArray {
   def main(args: Array[String]): Unit = {
     val array = Array(11, 12, 15, 18, 2, 5, 6, 8)
@@ -30,11 +33,7 @@ object BS_FindElementInRotatedSortedArray {
         //        is less than the previous and next. That's the index and
         //        adding 1 to it gives the number of rotation :)
         return mid
-      } else if (array(mid) <= array(end)) {
-        end = mid - 1
-      } else if (array(start) <= array(mid - 1)) {
-        start = mid + 1
-      }
+      } else if (array(mid) <= array(end)) end = mid - 1 else if (array(start) <= array(mid - 1)) start = mid + 1
     }
     -1
   }
@@ -47,13 +46,7 @@ object BS_FindElementInRotatedSortedArray {
     while (start <= end) {
       val mid = start + (end - start) / 2
 
-      if (array(mid) == searchElement) {
-        return mid
-      } else if (searchElement < array(mid)) {
-        end = mid - 1
-      } else {
-        start = mid + 1
-      }
+      if (array(mid) == searchElement) return mid else if (searchElement < array(mid)) end = mid - 1 else start = mid + 1
     }
     -1
   }

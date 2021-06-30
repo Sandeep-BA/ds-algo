@@ -1,5 +1,9 @@
 package ds.algo.binary.search
 
+
+/**
+ * Created by Sandeep Belgavi on 6/30/2021
+ */
 object BS_NextCharacterInAlphabetArray {
   def main(args: Array[String]): Unit = {
     println("Next alphabet of an element ==>"+
@@ -19,12 +23,8 @@ object BS_NextCharacterInAlphabetArray {
     var result = '#'
     while (start <= end) {
       val mid = start + (end - start) / 2
-      if (array(mid) == searchElement) {
-        start = mid + 1
-      }
-      if (array(mid) < searchElement) {
-        start = mid + 1
-      } else if (array(mid) > searchElement) {
+      if (array(mid) == searchElement) start = mid + 1
+      if (array(mid) < searchElement) start = mid + 1 else if (array(mid) > searchElement) {
         result = array(mid)
         end = mid - 1
       }
@@ -38,12 +38,8 @@ object BS_NextCharacterInAlphabetArray {
     var result = -1
     while (start <= end) {
       val mid = start + (end - start) / 2
-      if (array(mid) == searchElement) {
-        return mid
-      }
-      if (array(mid) < searchElement) {
-        start = mid + 1
-      } else if (array(mid) > searchElement) {
+      if (array(mid) == searchElement) return mid
+      if (array(mid) < searchElement) start = mid + 1 else if (array(mid) > searchElement) {
         result = mid
         end = mid - 1
       }

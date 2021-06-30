@@ -1,5 +1,8 @@
 package ds.algo.binary.search
 
+/**
+ * Created by Sandeep Belgavi on 6/30/2021
+ */
 object BinarySearchFirstAndLastOccurenceOfElement {
   def main(args: Array[String]): Unit = {
     println("Index of the search element via Binary Search Algorithm in the " +
@@ -32,11 +35,7 @@ object BinarySearchFirstAndLastOccurenceOfElement {
       if(array(mid) == searchElement){
         result = mid
         end = mid-1
-      } else if(searchElement< array(mid)){
-        end = mid-1
-      } else {
-        start = mid+1
-      }
+      } else if(searchElement< array(mid)) end = mid-1 else start = mid+1
     }
     result
   }
@@ -53,11 +52,7 @@ object BinarySearchFirstAndLastOccurenceOfElement {
       if(array(mid) == searchElement){
         result = mid
         start = mid+1
-      } else if(searchElement< array(mid)){
-        end = mid-1
-      } else {
-        start = mid+1
-      }
+      } else if(searchElement< array(mid)) end = mid-1 else start = mid+1
     }
     result
   }

@@ -7,6 +7,10 @@ element it decreses. Also, Array(i) != Array(i+1)
 
 You will have only one peak element in this bitonic array.
  */
+
+/**
+ * Created by Sandeep Belgavi on 6/30/2021
+ */
 object BS_FindMaximumElementInBitonicArray {
   def main(args: Array[String]): Unit = {
     // Return peak element in the array.
@@ -32,28 +36,8 @@ object BS_FindMaximumElementInBitonicArray {
     while(start<=end){
       val mid = start + (end-start)/2
 
-      if(mid>0 && mid<size){
-        if(array(mid) > array(mid-1) && array(mid) > array(mid+1)){
-          return mid
-        }
-        else if( array(mid+1)> array(mid)){
-          start = mid+1
-        } else {
-          end = mid-1
-        }
-      } else if( mid ==0 ){
-        if(array(mid)> array(mid+1)){
-          return mid
-        }else{
-          return mid +1
-        }
-      } else if(mid == size){
-        if(array(mid)> array(mid-1)){
-          return mid
-        } else{
-          return mid-1
-        }
-      }
+      if(mid>0 && mid<size) if(array(mid) > array(mid-1) && array(mid) > array(mid+1)) return mid
+      else if( array(mid+1)> array(mid)) start = mid+1 else end = mid-1 else if( mid ==0 ) if(array(mid)> array(mid+1)) return midelsereturn mid +1 else if(mid == size) if(array(mid)> array(mid-1)) return mid elsereturn mid-1
     }
     -1
   }

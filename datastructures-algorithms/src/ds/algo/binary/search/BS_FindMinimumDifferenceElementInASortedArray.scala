@@ -1,5 +1,9 @@
 package ds.algo.binary.search
 
+
+/**
+ * Created by Sandeep Belgavi on 6/30/2021
+ */
 object BS_FindMinimumDifferenceElementInASortedArray {
   def main(args: Array[String]): Unit = {
     println("Minimum difference element in array which gives difference less " +
@@ -28,19 +32,15 @@ object BS_FindMinimumDifferenceElementInASortedArray {
     var result = -1
     while (start <= end) {
       val mid = start + (end - start) / 2
-      if (array(mid) == searchElement) {
-        return array(mid)
-      }
+      if (array(mid) == searchElement) return array(mid)
       if (array(mid) < searchElement) {
         result = array(mid)
         start = mid + 1
       }
-      else if (array(mid) > searchElement) {
-        end = mid - 1
-      }
+      else if (array(mid) > searchElement) end = mid - 1
     }
     val lower = scala.math.abs(array(start) - searchElement)
     val higher = scala.math.abs(array(end) - searchElement)
-    if (lower < higher) return array(start) else return array(end)
+    if (lower < higher) array(start) else array(end)
   }
 }

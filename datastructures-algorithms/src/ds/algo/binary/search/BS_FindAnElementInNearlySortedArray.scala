@@ -8,6 +8,11 @@ Basically if an element is present in ith index in a sorted array, we can use
  out easily.
 
  */
+
+
+/**
+ * Created by Sandeep Belgavi on 6/30/2021
+ */
 object BS_FindAnElementInNearlySortedArray {
   def main(args: Array[String]): Unit = {
     println("Welcome to Binary Search Algorithm Problems!!! :)")
@@ -31,13 +36,7 @@ object BS_FindAnElementInNearlySortedArray {
       if(array(mid) == searchElement)
         return mid
       if(mid-1 >= start && array(mid-1) == searchElement)  return mid-1
-        if(mid+1 <= end && array(mid+1) == searchElement){
-        return mid+1
-      } else if(searchElement< array(mid)){
-        end = mid-2
-      } else {
-        start = mid+2
-      }
+        if(mid+1 <= end && array(mid+1) == searchElement) return mid+1 else if(searchElement< array(mid)) end = mid-2 else start = mid+2
     }
     -1
   }

@@ -6,6 +6,10 @@ number of times the sorted array is sorted is equal to index of the minmum
 element in the array!
 
  */
+
+/**
+ * Created by Sandeep Belgavi on 6/30/2021
+ */
 object BS_NumberOfTimesASortedArrayIsRotated {
   def main(args: Array[String]): Unit = {
     println("Number of times sorted array is rotated via Binary Search " +
@@ -50,12 +54,8 @@ object BS_NumberOfTimesASortedArrayIsRotated {
         //        is less than the previous and next. That's the index and
         //        adding 1 to it gives the number of rotation :)
         return mid
-       } else if(array(mid) <= array(end)){
-        end = mid - 1
-      }
-      else if(array(start) <= array(mid-1)){
-        start = mid+1
-      }
+       } else if(array(mid) <= array(end)) end = mid - 1
+      else if(array(start) <= array(mid-1)) start = mid+1
     }
     -1
   }
