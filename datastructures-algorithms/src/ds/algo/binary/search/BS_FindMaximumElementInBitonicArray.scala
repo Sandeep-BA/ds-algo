@@ -36,8 +36,12 @@ object BS_FindMaximumElementInBitonicArray {
     while(start<=end){
       val mid = start + (end-start)/2
 
-      if(mid>0 && mid<size) if(array(mid) > array(mid-1) && array(mid) > array(mid+1)) return mid
-      else if( array(mid+1)> array(mid)) start = mid+1 else end = mid-1 else if( mid ==0 ) if(array(mid)> array(mid+1)) return midelsereturn mid +1 else if(mid == size) if(array(mid)> array(mid-1)) return mid elsereturn mid-1
+      if(mid>0 && mid<size) if(array(mid) > array(mid-1) && array(mid) >
+        array(mid+1)) return mid
+      else if( array(mid+1)> array(mid)) start = mid+1 else end = mid-1
+      else if( mid ==0 ) if(array(mid)> array(mid+1)) return mid +1
+      else if(mid == size) if(array(mid)> array(mid-1)) return mid else
+        return mid-1
     }
     -1
   }
